@@ -31,29 +31,9 @@ public class Cliente {
 		Iterator<Renta> listaRentas = this.rentas.iterator();
 		
 		while (listaRentas.hasNext()) {
-			double monto = 0;
-			Renta renta = listaRentas.next();
 
-			// Calcula el monto de cada linea
-			switch (renta.getPelicula().getTipo()) {
-				case Pelicula.CATALOGO:
-					monto += 2;
-					if (renta.getDiasRentada() > 2) {
-						monto += (renta.getDiasRentada() - 2) * 1.5;
-					}
-					break;
-				case Pelicula.ESTRENO:
-					monto += renta.getDiasRentada() * 3;
-					break;
-				case Pelicula.INFANTIL:
-					monto += 1.5;
-					if (renta.getDiasRentada() > 3) {
-						monto += (renta.getDiasRentada() - 3) * 1.5;
-					}
-					break;
-				default:
-					break;
-			}
+			Renta renta = listaRentas.next();
+			Double monto = calcularImporteRenta(renta);
 
 			// Agregar puntos de cliente frecuente
 			puntosClienteFrecuente++;
@@ -73,5 +53,30 @@ public class Cliente {
 		resultado.append("Has acumulado " + puntosClienteFrecuente + " puntos adicionales a tu cuenta.");
 		
 		return resultado.toString();
+	}
+
+	private double calcularImporteRenta(Renta renta) {
+		// Calcula el monto de cada linea
+		Double monto = 0D;
+		switch (renta.getPelicula().getTipo()) {
+            case Pelicula.CATALOGO:
+                monto += 2;
+                if (renta.getDiasRentada() > 2) {
+                    monto += (renta.getDiasRentada() - 2) * 1.5;
+                }
+                break;
+            case Pelicula.ESTRENO:
+                monto += renta.getDiasRentada() * 3;
+                break;
+            case Pelicula.INFANTIL:
+                monto += 1.5;
+                if (renta.getDiasRentada() > 3) {
+                    monto += (renta.getDiasRentada() - 3) * 1.5;
+                }
+                break;
+            default:
+                break;
+        }
+        return monto;
 	}
 }
