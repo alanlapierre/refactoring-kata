@@ -36,7 +36,7 @@ public class Cliente {
 			Double monto = renta.calcularImporte();
 
 			// Calcular puntos de cliente frecuente
-			puntosClienteFrecuente += calcularPuntosClienteFrecuente(renta);
+			puntosClienteFrecuente += renta.calcularPuntosClienteFrecuente();
 			
 			// Muestra detalle de la renta
 			resultado.append("\t" + renta.getPelicula().getTitulo() + "\t" + monto + "\n");
@@ -48,15 +48,6 @@ public class Cliente {
 		resultado.append("Has acumulado " + puntosClienteFrecuente + " puntos adicionales a tu cuenta.");
 		
 		return resultado.toString();
-	}
-
-	private int calcularPuntosClienteFrecuente(Renta renta) {
-		Integer puntosClienteFrecuente = 1;
-		// Agregar bono por renta de dos días en películas de estreno
-		if ((renta.getPelicula().getTipo() == Pelicula.ESTRENO) && renta.getDiasRentada() > 1) {
-            puntosClienteFrecuente++;
-        }
-		return puntosClienteFrecuente;
 	}
 
 }
