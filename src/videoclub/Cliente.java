@@ -32,23 +32,23 @@ public class Cliente {
 		
 		while (listaRentas.hasNext()) {
 			double monto = 0;
-			Renta pelicula = listaRentas.next();
+			Renta renta = listaRentas.next();
 
 			// Calcula el monto de cada linea
-			switch (pelicula.getPelicula().getTipo()) {
+			switch (renta.getPelicula().getTipo()) {
 				case Pelicula.CATALOGO:
 					monto += 2;
-					if (pelicula.getDiasRentada() > 2) {
-						monto += (pelicula.getDiasRentada() - 2) * 1.5;
+					if (renta.getDiasRentada() > 2) {
+						monto += (renta.getDiasRentada() - 2) * 1.5;
 					}
 					break;
 				case Pelicula.ESTRENO:
-					monto += pelicula.getDiasRentada() * 3;
+					monto += renta.getDiasRentada() * 3;
 					break;
 				case Pelicula.INFANTIL:
 					monto += 1.5;
-					if (pelicula.getDiasRentada() > 3) {
-						monto += (pelicula.getDiasRentada() - 3) * 1.5;
+					if (renta.getDiasRentada() > 3) {
+						monto += (renta.getDiasRentada() - 3) * 1.5;
 					}
 					break;
 				default:
@@ -59,12 +59,12 @@ public class Cliente {
 			puntosClienteFrecuente++;
 			
 			// Agregar bono por renta de dos días en películas de estreno
-			if ((pelicula.getPelicula().getTipo() == Pelicula.ESTRENO) && pelicula.getDiasRentada() > 1) {
+			if ((renta.getPelicula().getTipo() == Pelicula.ESTRENO) && renta.getDiasRentada() > 1) {
 				puntosClienteFrecuente++;
 			}
 			
 			// Muestra detalle de la renta
-			resultado.append("\t" + pelicula.getPelicula().getTitulo() + "\t" + monto + "\n");
+			resultado.append("\t" + renta.getPelicula().getTitulo() + "\t" + monto + "\n");
 			montoTotal += monto;
 		}
 		
