@@ -16,3 +16,5 @@
 *.tar.gz
 *.rar
 
+#DS Store files
+.DS_Store
