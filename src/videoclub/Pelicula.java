@@ -40,7 +40,7 @@ public class Pelicula {
 			default:
 				throw new IllegalArgumentException("Tipo de película no es correcto");
 		}
-		this.tipo = tipo;
+
 	}
 
 	public double calcularImporte(Integer diasRentada) {
