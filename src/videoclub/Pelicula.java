@@ -6,7 +6,7 @@ public class Pelicula {
 	public static final int INFANTIL = 2;
 	
 	private String titulo;
-	private int tipo;
+	private PrecioPelicula precio;
 	
 	public Pelicula(String titulo, int tipo) {
 		setTitulo(titulo);
@@ -22,10 +22,24 @@ public class Pelicula {
 	}
 
 	public int getTipo() {
-		return tipo;
+		return precio.getTipoPelicula();
 	}
 
 	public void setTipo(int tipo) {
+
+		switch (tipo) {
+			case CATALOGO:
+				precio  = new PrecioPeliculaCatalogo();
+				break;
+			case ESTRENO:
+				precio = new PrecioPeliculaEstreno();
+				break;
+			case INFANTIL:
+				precio = new PrecioPeliculaInfantil();
+				break;
+			default:
+				throw new IllegalArgumentException("Tipo de película no es correcto");
+		}
 		this.tipo = tipo;
 	}
 
