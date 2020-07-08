@@ -48,12 +48,7 @@ public class Pelicula {
 	}
 
 	public int calcularPuntosClienteFrecuente(Integer diasRentada) {
-		Integer puntosClienteFrecuente = 1;
-		// Agregar bono por renta de dos días en películas de estreno
-		if ((getTipo() == Pelicula.ESTRENO) && diasRentada > 1) {
-			puntosClienteFrecuente++;
-		}
-		return puntosClienteFrecuente;
+		return precio.calcularPuntosClienteFrecuente(diasRentada);
 	}
 
 }
