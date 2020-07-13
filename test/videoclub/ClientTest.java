@@ -3,13 +3,14 @@ package videoclub;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+import videoclub.receipt_printer.ReceiptPrinterImpl;
 
 public class ClientTest {
 
 	@Test
 	public void generate_receipt_without_previous_rent() {
 		// arrange
-		Client client = new Client("Juan Perez");
+		Client client = new Client("Juan Perez", new ReceiptPrinterImpl());
 		String expectedReceipt = "Rentas del Cliente: Juan Perez\nCantidad a pagar: 0.0\nHas acumulado 0 puntos adicionales a tu cuenta.";
 		
 		// act
@@ -23,7 +24,7 @@ public class ClientTest {
 	@Test
 	public void generate_receipt_for_rent_catalog_movie_for_two_days() {
 		// arrange
-		Client client = new Client("Juan Perez");
+		Client client = new Client("Juan Perez", new ReceiptPrinterImpl());
 		Movie savingPrivateRyan = new Movie("Salvando al Soldado Ryan", Movie.CATALOG);
 		String expectedReceipt = "Rentas del Cliente: Juan Perez\n\tSalvando al Soldado Ryan\t2.0\nCantidad a pagar: 2.0\nHas acumulado 1 puntos adicionales a tu cuenta.";
 		
@@ -38,7 +39,7 @@ public class ClientTest {
 	@Test
 	public void generate_receipt_for_rent_catalog_movie_for_more_than_two_days() {
 		// arrange
-		Client client = new Client("Juan Perez");
+		Client client = new Client("Juan Perez", new ReceiptPrinterImpl());
 		Movie savingPrivateRyan = new Movie("Salvando al Soldado Ryan", Movie.CATALOG);
 		String expectedReceipt = "Rentas del Cliente: Juan Perez\n\tSalvando al Soldado Ryan\t5.0\nCantidad a pagar: 5.0\nHas acumulado 1 puntos adicionales a tu cuenta.";
 		
@@ -53,7 +54,7 @@ public class ClientTest {
 	@Test
 	public void generate_receipt_for_rent_premiere_movie() {
 		// arrange
-		Client client = new Client("Juan Perez");
+		Client client = new Client("Juan Perez", new ReceiptPrinterImpl());
 		Movie savingPrivateRyan = new Movie("Salvando al Soldado Ryan", Movie.PREMIERE);
 		String expectedReceipt = "Rentas del Cliente: Juan Perez\n\tSalvando al Soldado Ryan\t3.0\nCantidad a pagar: 3.0\nHas acumulado 1 puntos adicionales a tu cuenta.";
 		
@@ -68,7 +69,7 @@ public class ClientTest {
 	@Test
 	public void generate_receipt_for_rent_movie_for_children() {
 		// arrange
-		Client client = new Client("Juan Perez");
+		Client client = new Client("Juan Perez", new ReceiptPrinterImpl());
 		Movie toyStory = new Movie("Toy Story", Movie.CHILD);
 		String expectedReceipt = "Rentas del Cliente: Juan Perez\n\tToy Story\t1.5\nCantidad a pagar: 1.5\nHas acumulado 1 puntos adicionales a tu cuenta.";
 		
@@ -83,7 +84,7 @@ public class ClientTest {
 	@Test
 	public void generate_receipt_for_several_movies() {
 		// arrange
-		Client client = new Client("Juan Perez");
+		Client client = new Client("Juan Perez", new ReceiptPrinterImpl());
 		Movie savingPrivateRyan = new Movie("Salvando al Soldado Ryan", Movie.CATALOG);
 		Movie kong = new Movie("Kong", Movie.PREMIERE);
 		Movie toyStory = new Movie("Toy Story", Movie.CHILD);
