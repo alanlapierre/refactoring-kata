@@ -5,24 +5,16 @@ public class Rental {
 	private int daysOfRent;
 	
 	public Rental(Movie movie, int daysOfRent ) {
-		setMovie(movie);
-		setDaysOfRent(daysOfRent);
+		this.movie = movie;
+		this.daysOfRent = daysOfRent;
 	}
 
 	public Movie getMovie() {
 		return movie;
 	}
 
-	public void setMovie(Movie movie) {
-		this.movie = movie;
-	}
-
 	public int getDaysOfRent() {
 		return daysOfRent;
-	}
-
-	public void setDaysOfRent(int daysOfRent) {
-		this.daysOfRent = daysOfRent;
 	}
 
     public double calculatePrice() {

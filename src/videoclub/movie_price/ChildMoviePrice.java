@@ -1,12 +1,6 @@
 package videoclub.movie_price;
 
-import videoclub.Movie;
-
 public class ChildMoviePrice extends MoviePrice {
-    @Override
-    public Integer getMovieType() {
-        return Movie.CHILD;
-    }
 
     @Override
     public Double calculatePrice(Integer daysOfRent) {

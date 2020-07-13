@@ -3,6 +3,7 @@ package videoclub;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+import videoclub.movie_price.MovieType;
 import videoclub.receipt_printer.ReceiptPrinterImpl;
 
 public class ClientTest {
@@ -25,7 +26,7 @@ public class ClientTest {
 	public void generate_receipt_for_rent_catalog_movie_for_two_days() {
 		// arrange
 		Client client = new Client("Juan Perez", new ReceiptPrinterImpl());
-		Movie savingPrivateRyan = new Movie("Salvando al Soldado Ryan", Movie.CATALOG);
+		Movie savingPrivateRyan = new Movie("Salvando al Soldado Ryan", MovieType.CATALOG);
 		String expectedReceipt = "Rentas del Cliente: Juan Perez\n\tSalvando al Soldado Ryan\t2.0\nCantidad a pagar: 2.0\nHas acumulado 1 puntos adicionales a tu cuenta.";
 		
 		// act
@@ -40,7 +41,7 @@ public class ClientTest {
 	public void generate_receipt_for_rent_catalog_movie_for_more_than_two_days() {
 		// arrange
 		Client client = new Client("Juan Perez", new ReceiptPrinterImpl());
-		Movie savingPrivateRyan = new Movie("Salvando al Soldado Ryan", Movie.CATALOG);
+		Movie savingPrivateRyan = new Movie("Salvando al Soldado Ryan", MovieType.CATALOG);
 		String expectedReceipt = "Rentas del Cliente: Juan Perez\n\tSalvando al Soldado Ryan\t5.0\nCantidad a pagar: 5.0\nHas acumulado 1 puntos adicionales a tu cuenta.";
 		
 		// act
@@ -55,7 +56,7 @@ public class ClientTest {
 	public void generate_receipt_for_rent_premiere_movie() {
 		// arrange
 		Client client = new Client("Juan Perez", new ReceiptPrinterImpl());
-		Movie savingPrivateRyan = new Movie("Salvando al Soldado Ryan", Movie.PREMIERE);
+		Movie savingPrivateRyan = new Movie("Salvando al Soldado Ryan", MovieType.PREMIERE);
 		String expectedReceipt = "Rentas del Cliente: Juan Perez\n\tSalvando al Soldado Ryan\t3.0\nCantidad a pagar: 3.0\nHas acumulado 1 puntos adicionales a tu cuenta.";
 		
 		// act
@@ -70,7 +71,7 @@ public class ClientTest {
 	public void generate_receipt_for_rent_movie_for_children() {
 		// arrange
 		Client client = new Client("Juan Perez", new ReceiptPrinterImpl());
-		Movie toyStory = new Movie("Toy Story", Movie.CHILD);
+		Movie toyStory = new Movie("Toy Story", MovieType.CHILD);
 		String expectedReceipt = "Rentas del Cliente: Juan Perez\n\tToy Story\t1.5\nCantidad a pagar: 1.5\nHas acumulado 1 puntos adicionales a tu cuenta.";
 		
 		// act
@@ -85,9 +86,9 @@ public class ClientTest {
 	public void generate_receipt_for_several_movies() {
 		// arrange
 		Client client = new Client("Juan Perez", new ReceiptPrinterImpl());
-		Movie savingPrivateRyan = new Movie("Salvando al Soldado Ryan", Movie.CATALOG);
-		Movie kong = new Movie("Kong", Movie.PREMIERE);
-		Movie toyStory = new Movie("Toy Story", Movie.CHILD);
+		Movie savingPrivateRyan = new Movie("Salvando al Soldado Ryan", MovieType.CATALOG);
+		Movie kong = new Movie("Kong", MovieType.PREMIERE);
+		Movie toyStory = new Movie("Toy Story", MovieType.CHILD);
 		String expectedReceipt = "Rentas del Cliente: Juan Perez\n\tSalvando al Soldado Ryan\t2.0\n\tKong\t3.0\n" +
 				"\tToy Story\t1.5\nCantidad a pagar: 6.5\nHas acumulado 3 puntos adicionales a tu cuenta.";
 		
