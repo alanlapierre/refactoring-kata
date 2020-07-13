@@ -3,7 +3,7 @@ package videoclub;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-import videoclub.movie_price.MovieType;
+import videoclub.movie_type.MovieType;
 import videoclub.receipt_printer.ReceiptPrinterImpl;
 
 public class ClientTest {

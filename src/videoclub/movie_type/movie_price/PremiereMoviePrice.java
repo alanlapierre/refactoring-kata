@@ -1,4 +1,4 @@
-package videoclub.movie_price;
+package videoclub.movie_type.movie_price;
 
 public class PremiereMoviePrice extends MoviePrice {
 

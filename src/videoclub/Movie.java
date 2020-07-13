@@ -1,6 +1,6 @@
 package videoclub;
 
-import videoclub.movie_price.MovieType;
+import videoclub.movie_type.MovieType;
 
 public class Movie {
 
@@ -21,7 +21,7 @@ public class Movie {
 	}
 
 	public int calculateLoyaltyPoints(Integer daysOfRent) {
-		return movieType.getMoviePrice().calculateLoyaltyPoints(daysOfRent);
+		return movieType.getLoyaltyCalculator().calculateLoyaltyPoints(daysOfRent);
 	}
 
 }
