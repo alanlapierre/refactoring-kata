@@ -10,9 +10,13 @@ el impacto de los cambios y mejoras.
 
 ## Estructura inicial
 
-![Diagrama de clases inicial](https://github.com/alanlapierre/refactoring-kata/blob/master/images/kata_refactoring_inicial_clases.jpg)
+<p align="center">
+  <img src="https://github.com/alanlapierre/refactoring-kata/blob/master/images/kata_refactoring_inicial_clases.jpg" alt="Diagrama de clases inicial"/>
+</p>
 
-![Diagrama de secuencia inicial](https://github.com/alanlapierre/refactoring-kata/blob/master/images/kata_refactoring_inicial_secuencia.jpg)
+<p align="center">
+  <img src="https://github.com/alanlapierre/refactoring-kata/blob/master/images/kata_refactoring_inicial_secuencia.jpg" alt="Diagrama de secuencia inicial"/>
+</p>
 
 ## Estructura final
 
