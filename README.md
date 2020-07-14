@@ -10,12 +10,6 @@ el impacto de los cambios y mejoras.
 
 ## Situación inicial
 
-### Diagrama de Clases
-
-<p align="center">
-  <img src="https://github.com/alanlapierre/refactoring-kata/blob/master/images/kata_refactoring_inicial_clases.jpg" alt="Diagrama de clases inicial"/>
-</p>
-
 ### Diagrama de Secuencia
 
 <p align="center">
