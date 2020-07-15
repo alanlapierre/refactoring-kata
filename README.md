@@ -8,9 +8,15 @@ Se pretende mejorar la calidad, de forma que podamos incluir futuras modificacio
 que nuestro resultado final sea un **código limpio**, con buena **separación de responsabilidades** y lo **suficientemente flexible** como para reducir 
 el impacto de los cambios y mejoras.
 
-## Estructura inicial
+## Situación inicial
 
-## Estructura final
+### Diagrama de Secuencia
+
+<p align="center">
+  <img src="https://github.com/alanlapierre/refactoring-kata/blob/master/images/kata_refactoring_inicial_secuencia.jpg" alt="Diagrama de secuencia inicial"/>
+</p>
+
+## Situación final
 
 ## Notas
 * Cada commit representa un paso en la refactorización.
