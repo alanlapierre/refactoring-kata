@@ -18,9 +18,17 @@ el impacto de los cambios y mejoras.
 
 ## Situación final
 
+### Diagrama de Clases
+
+<p align="center">
+  <img src="https://github.com/alanlapierre/refactoring-kata/blob/master/images/kata_refactoring_final_clases.jpg" alt="Diagrama de clases final"/>
+</p>
+
 ## Notas
 * Cada commit representa un paso en la refactorización.
 * El commit inicial es el ejemplo del cual partimos.
+* El enum MovieType actua como un Factory de alguna manera, nos permite setear a la clase Movie el MoviePrice y el LoyaltyCalculator que corresponda.
+* Si bien podria haberse mejorado mucho más el diseño, creo que es una aproximación bastante buena para la complejidad del ejercicio.
 * Las técnicas usadas son simples, el ejemplo no requería el uso de patrones muy complejos.
 
 ## Licencia MIT
